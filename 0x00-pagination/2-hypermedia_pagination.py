@@ -38,18 +38,6 @@ class Server:
         start_index, end_index = index_range(page, page_size)
         return self.dataset()[start_index:end_index]
 
-    HyperDataType = TypedDict(
-        "HyperDataType",
-        {
-            "page_size": int,
-            "page": int,
-            "data": List[List],
-            "next_page": Optional[int],
-            "prev_page": Optional[int],
-            "total_pages": int,
-        },
-    )
-
     def get_hyper(self, page: int = 1, page_size: int = 10) -> Dict:
         """Hypermedia pagination"""
 
