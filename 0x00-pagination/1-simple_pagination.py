@@ -35,15 +35,5 @@ class Server:
         assert isinstance(page, int) and page > 0
         assert isinstance(page_size, int) and page_size > 0
 
-        data = []
         start_index, end_index = index_range(page, page_size)
-        with open(self.DATA_FILE, "r") as f:
-            reader = csv.reader(f)
-            for _ in range(start_index + 1):
-                if next(reader, None) is None:
-                    return []
-
-            for _ in range(end_index - start_index):
-                data.append(next(reader))
-
-        return data
+        return self.dataset()[start_index:end_index]
