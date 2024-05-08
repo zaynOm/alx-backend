@@ -28,5 +28,6 @@ class MRUCache(BaseCaching):
 
     def get(self, key):
         """Retrive an item from cache"""
-        self.mru = key
+        if key in self.cache_data:
+            self.mru = key
         return self.cache_data.get(key)
