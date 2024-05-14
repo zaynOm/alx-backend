@@ -19,8 +19,8 @@ babel = Babel(app)
 
 
 @app.route("/")
-def hello():
-    """Hello world route"""
+def index():
+    """Entry point route"""
     return render_template("1-index.html")
 
 
