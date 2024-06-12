@@ -1,4 +1,4 @@
-const { createClient } = require('redis');
+import { createClient } from 'redis';
 
 const client = createClient();
 
